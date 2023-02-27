@@ -6,7 +6,7 @@ CONFIGFOLDER='/root/.sprycoin'
 COIN_DAEMON='sprycoind'
 COIN_CLI='sprycoin-cli'
 COIN_PATH='/usr/local/bin/'
-COIN_TGZ=`curl -s https://api.github.com/repos/SprycoinBF/Sprycoin/releases/latest | grep "browser_download_url.*Linux\\.tar.gz" | cut -d : -f 2,3 | tr -d \" | xargs`
+COIN_TGZ=`curl -s https://api.github.com/devsatskillspry/Sprycoin/releases | grep "browser_download_url.*Linux\\.zip" | cut -d : -f 2,3 | tr -d \" | xargs`
 COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
 COIN_NAME='sprycoin'
 COIN_PORT=37021
@@ -14,7 +14,7 @@ RPC_PORT=37022
 
 BLUE="\033[0;34m"
 YELLOW="\033[0;33m"
-CYAN="\033[0;36m" 
+CYAN="\033[0;36m"
 PURPLE="\033[0;35m"
 RED='\033[0;31m'
 GREEN="\033[0;32m"
@@ -151,16 +151,11 @@ externalip=$NODEIP:$COIN_PORT
 masternodeprivkey=$COINKEY
 
 # ADDNODES:
-addnode=seed01.sprycoin.io
-addnode=seed02.sprycoin.io
-addnode=seed03.sprycoin.io
-addnode=seed04.sprycoin.io
-addnode=seed05.sprycoin.io
-addnode=seed06.sprycoin.io
-addnode=seed07.sprycoin.io
-addnode=seed08.sprycoin.io
-addnode=seed09.sprycoin.io
-addnode=seed10.sprycoin.io
+addnode=134.122.19.119
+addnode=134.122.106.6
+addnode=159.203.31.201
+addnode=159.89.171.180
+
 
 
 EOF
@@ -198,7 +193,7 @@ function get_ip() {
   else
     NODEIP=${NODE_IPS[0]}
   fi
-  
+
   if [[ -z "$NODEIP" ]]; then
       #Couldn't determine IP, most likely icanhazip.com is timed out
       echo -e "${RED}Failed to determine IP address. Please wait a couple minutes and rerun script. If this continues, ask for assistance in discord.${NC}"
@@ -272,7 +267,7 @@ function important_information() {
  echo -e "${GREEN}$COIN_CLI getmasternodestatus${NC}"
  echo -e "${GREEN}$COIN_CLI getinfo${NC}"
  echo -e "${BLUE}================================================================================================================================${NC}"
- 
+
  }
 
 function setup_node() {
