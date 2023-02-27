@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Name=Sprycoin
+Comment= SPRY P2P Cryptocurrency
+Comment[fr]= SPRY, monnaie virtuelle cryptographique pair à pair
+Comment[tr]= SPRY, eşten eşe kriptografik sanal para birimi
+Exec=sprycoin-qt %u
+Terminal=false
+Type=Application
+Icon=sprycoin128
+MimeType=x-scheme-handler/pivx;
+Categories=Office;Finance;
+StartupWMClass=Sprycoin-qt
