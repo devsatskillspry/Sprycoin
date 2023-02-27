@@ -1,8 +1,3 @@
-![](share/pixmaps/sprycoin_splash.png)
-
-
-
-
 Specifications:
 ==================
 
